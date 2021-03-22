@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Membuat sticky navbar menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<!-- begin CSS code -->
+ 
+<style>
+body {
+  margin: 0;
+  font-size: 18px;
+  font-family: sans-serif;
+  height: 2000px;
+}
+ 
+.header {
+  background-color: #f5f5f5;
+  padding: 22px;
+  text-align: center;
+}
+ 
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+ 
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+ 
+#navbar a:hover {
+  background-color: #0b7dda;
+  color: yellow;
+}
+ 
+#navbar a.active {
+  background-color: #2196F3;
+  color: white;
+}
+ 
+.content {
+  padding: 16px;
+}
+ 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+ 
+.sticky + .content {
+  padding-top: 60px;
+}
+</style>
+ 
+<!-- End CSS code -->
+ 
+</head>
+<body>
+ 
+<!-- this content between tag <body>...</body> will be show on browser -->
+ 
+<div class="header">
+  <h2>Silahkan scroll kebawah</h2>
+  <h2>Untuk melihat efek dari stycky menu</h2>
+</div>
+ 
+<div id="navbar">
+  <a class="active" href="javascript:void(0)">Home</a>
+  <a href="javascript:void(0)">Menu</a>
+  <a href="javascript:void(0)">Blog</a>
+  <a href="javascript:void(0)">Contact</a>
+</div>
+ 
+<div class="content">
+  <h3>Membuat sticky navbar menu</h3>
+  <p>Menu navbar ini akan selalu berada di halaman atas ketika Anda scroll ke bawah</p>
+  <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+</div>
+ 
+<!-- Begin JS code -->
+ 
+<script>
+window.onscroll = function() {myFunction()};
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+ 
+<!-- End of JS code -->
+<!-- End of body content -->
+ 
+</body>
+</html>
